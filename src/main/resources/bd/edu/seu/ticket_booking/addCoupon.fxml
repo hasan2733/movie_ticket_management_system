@@ -8,34 +8,45 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd.edu.seu.ticket_booking.AdminController.AddCouponController">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd.edu.seu.ticket_booking.AdminController.AddCouponController">
    <children>
       <Label layoutX="230.0" layoutY="14.0" text="Add New Coupon">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Label layoutX="32.0" layoutY="103.0" text="Discount Code:" />
+      <Label layoutX="19.0" layoutY="102.0" text="Discount Code:">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
       <TextField fx:id="codeField" layoutX="128.0" layoutY="99.0" prefHeight="26.0" prefWidth="278.0" />
-      <Label layoutX="32.0" layoutY="134.0" text="Discount Type:" />
-      <ChoiceBox fx:id="typeField" layoutX="128.0" layoutY="130.0" prefHeight="26.0" prefWidth="278.0" />
-      <Label layoutX="32.0" layoutY="173.0" text="Discount Value:" />
-      <TextField fx:id="valueField" layoutX="128.0" layoutY="169.0" prefHeight="26.0" prefWidth="278.0" />
-      <Label layoutX="32.0" layoutY="211.0" text="Applicable To:" />
-      <ChoiceBox fx:id="applicableField" layoutX="128.0" layoutY="206.0" prefHeight="26.0" prefWidth="278.0" />
-      <Label layoutX="35.0" layoutY="241.0" text="Expiray Date:" />
-      <DatePicker fx:id="expirayField" layoutX="127.0" layoutY="237.0" prefHeight="26.0" prefWidth="285.0" />
-      <Button layoutX="230.0" layoutY="299.0" mnemonicParsing="false" onAction="#saveEvent" text="Save" style="-fx-background-color: linear-gradient(to right,#36d1dc, #5b86e5);
-       -fx-text-fill: white;
-       -fx-font-weight: bold;
-       -fx-background-radius: 10;
-       -fx-cursor: hand;"/>
-      <Button layoutX="509.0" layoutY="20.0" mnemonicParsing="false" onAction="#backEvent" text="Back"
-              style="-fx-background-color: linear-gradient(to right,#43cea2, #185a9d);
-       -fx-text-fill: white;
-       -fx-font-weight: bold;
-       -fx-background-radius: 10;
-       -fx-cursor: hand;"/>
+      <Label layoutX="21.0" layoutY="156.0" text="Discount Type:">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <ChoiceBox fx:id="typeField" layoutX="128.0" layoutY="152.0" prefHeight="26.0" prefWidth="278.0" />
+      <Label layoutX="18.0" layoutY="202.0" text="Discount Value:">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <TextField fx:id="valueField" layoutX="128.0" layoutY="199.0" prefHeight="26.0" prefWidth="278.0" />
+      <Label layoutX="22.0" layoutY="253.0" text="Applicable To:">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <ChoiceBox fx:id="applicableField" layoutX="127.0" layoutY="250.0" prefHeight="26.0" prefWidth="278.0" />
+      <Label layoutX="21.0" layoutY="311.0" text="Expiray Date:">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <DatePicker fx:id="expirayField" layoutX="124.0" layoutY="308.0" prefHeight="26.0" prefWidth="285.0" />
+      <Button layoutX="317.0" layoutY="441.0" mnemonicParsing="false" onAction="#saveEvent" style="-fx-background-color: linear-gradient(to right,#36d1dc, #5b86e5);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Save">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Button layoutX="614.0" layoutY="17.0" mnemonicParsing="false" onAction="#backEvent" style="-fx-background-color: linear-gradient(to right,#43cea2, #185a9d);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Back">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
    </children>
 </AnchorPane>

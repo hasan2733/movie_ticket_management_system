@@ -7,26 +7,50 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd.edu.seu.ticket_booking.AdminController.AddMovieController">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd.edu.seu.ticket_booking.AdminController.AddMovieController">
    <children>
       <Label layoutX="246.0" layoutY="14.0" text="Add Movie">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="81.0" prefHeight="18.0" prefWidth="40.0" text="TItle:" />
+      <Label layoutX="14.0" layoutY="81.0" prefHeight="18.0" prefWidth="40.0" text="TItle:">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
       <TextField fx:id="titleField" layoutX="91.0" layoutY="77.0" prefHeight="26.0" prefWidth="378.0" />
-      <Label layoutX="14.0" layoutY="117.0" text="Genre:" />
+      <Label layoutX="14.0" layoutY="117.0" text="Genre:">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
       <TextField fx:id="genreField" layoutX="91.0" layoutY="113.0" prefHeight="26.0" prefWidth="378.0" />
-      <Label layoutY="158.0" text="Duration (min) :" />
+      <Label layoutY="158.0" text="Duration (min) :">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
       <TextField fx:id="durationField" layoutX="91.0" layoutY="153.0" prefHeight="26.0" prefWidth="378.0" />
-      <Label layoutX="4.0" layoutY="200.0" text="IMDB Ratings:" />
+      <Label layoutX="4.0" layoutY="200.0" text="IMDB Ratings:">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
       <TextField fx:id="ratingsField" layoutX="91.0" layoutY="195.0" prefHeight="26.0" prefWidth="378.0" />
-      <Label layoutX="4.0" layoutY="239.0" text="Trailer Url:" />
+      <Label layoutX="4.0" layoutY="239.0" text="Trailer Url:">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
       <TextField fx:id="urlField" layoutX="91.0" layoutY="234.0" prefHeight="26.0" prefWidth="378.0" />
-      <ImageView fx:id="posterImage" fitHeight="91.0" fitWidth="109.0" layoutX="469.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="478.0" layoutY="361.0" mnemonicParsing="false" onAction="#uploadEvent" style="-fx-background-color: linear-gradient(to right,#ff512f, #dd2476);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Upload Poster" />
-      <Button layoutX="228.0" layoutY="361.0" mnemonicParsing="false" onAction="#saveEvent" style="-fx-background-color: linear-gradient(to right,#36d1dc, #5b86e5);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Save" />
-      <Button layoutX="509.0" layoutY="17.0" mnemonicParsing="false" onAction="#backEvent" style="-fx-background-color: linear-gradient(to right,#43cea2, #185a9d);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Back" />
+      <ImageView fx:id="posterImage" fitHeight="133.0" fitWidth="133.0" layoutX="463.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="476.0" layoutY="431.0" mnemonicParsing="false" onAction="#uploadEvent" style="-fx-background-color: linear-gradient(to right,#ff512f, #dd2476);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Upload Poster">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button layoutX="225.0" layoutY="431.0" mnemonicParsing="false" onAction="#saveEvent" style="-fx-background-color: linear-gradient(to right,#36d1dc, #5b86e5);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Save">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button layoutX="632.0" layoutY="17.0" mnemonicParsing="false" onAction="#backEvent" style="-fx-background-color: linear-gradient(to right,#43cea2, #185a9d);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Back">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
    </children>
 </AnchorPane>

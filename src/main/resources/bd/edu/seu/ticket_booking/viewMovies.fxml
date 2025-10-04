@@ -10,20 +10,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd.edu.seu.ticket_booking.CustomerContoller.ViewMoviesController">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd.edu.seu.ticket_booking.CustomerContoller.ViewMoviesController">
     <children>
-        <Label layoutX="238.0" layoutY="14.0" text="Now Showing">
+        <Label layoutX="267.0" layoutY="15.0" text="Now Showing">
             <font>
                 <Font name="System Bold" size="19.0" />
             </font>
         </Label>
-        <TextField fx:id="searchField" layoutX="36.0" layoutY="49.0" prefHeight="26.0" prefWidth="554.0" promptText="Search Movies" />
-        <TableView fx:id="movieTable" layoutX="37.0" layoutY="82.0" prefHeight="138.0" prefWidth="554.0">
+        <TextField fx:id="searchField" layoutX="29.0" layoutY="48.0" prefHeight="26.0" prefWidth="610.0" promptText="Search Movies" />
+        <TableView fx:id="movieTable" layoutX="29.0" layoutY="75.0" prefHeight="138.0" prefWidth="610.0">
             <columns>
                 <TableColumn fx:id="titleC" prefWidth="184.0" text="Title" />
-                <TableColumn fx:id="genreC" prefWidth="92.79998779296875" text="Genre" />
-                <TableColumn fx:id="DurationC" prefWidth="126.4000244140625" text="Dutation(min)" />
-                <TableColumn fx:id="ImdbC" prefWidth="150.4000244140625" text="Imdb Ratings" />
+                <TableColumn fx:id="genreC" prefWidth="114.39996337890625" text="Genre" />
+                <TableColumn fx:id="DurationC" prefWidth="132.0" text="Dutation(min)" />
+                <TableColumn fx:id="ImdbC" prefWidth="179.99996948242188" text="Imdb Ratings" />
             </columns>
         </TableView>
         <Label layoutX="37.0" layoutY="238.0" prefHeight="18.0" prefWidth="66.0" text="Movie TItle:" />
@@ -35,11 +35,11 @@
         <Label layoutX="36.0" layoutY="324.0" prefHeight="18.0" prefWidth="43.0" text="Ratings:" />
         <Label fx:id="durationField" layoutX="103.0" layoutY="295.0" prefHeight="18.0" prefWidth="137.0" />
         <Separator layoutX="286.0" layoutY="235.0" orientation="VERTICAL" prefHeight="138.0" prefWidth="18.0" />
-        <ImageView fx:id="posterImage" fitHeight="101.0" fitWidth="114.0" layoutX="376.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true" />
-        <Label layoutX="398.0" layoutY="333.0" text="Movie Poster" />
-        <Button layoutX="350.0" layoutY="361.0" mnemonicParsing="false" onAction="#trailerEvent" style="-fx-background-color: linear-gradient(to right,#36d1dc, #5b86e5);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Watch Trailers" />
-        <Button layoutX="458.0" layoutY="360.0" mnemonicParsing="false" onAction="#bookEvent" style="-fx-background-color: linear-gradient(to right,#ff512f, #dd2476);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Book Now" />
-        <Button layoutX="529.0" layoutY="16.0" mnemonicParsing="false" onAction="#backEvent" style="-fx-background-color: linear-gradient(to right,#43cea2, #185a9d);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Back" />
-      <Button layoutX="37.0" layoutY="361.0" mnemonicParsing="false" onAction="#reviewEvent" style="-fx-background-color: linear-gradient(to right,#36d1dc, #5b86e5);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="View Reviews" />
+        <ImageView fx:id="posterImage" fitHeight="138.0" fitWidth="138.0" layoutX="412.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true" />
+        <Label layoutX="446.0" layoutY="385.0" text="Movie Poster" />
+        <Button layoutX="362.0" layoutY="422.0" mnemonicParsing="false" onAction="#trailerEvent" style="-fx-background-color: linear-gradient(to right,#36d1dc, #5b86e5);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Watch Trailers" />
+        <Button layoutX="508.0" layoutY="422.0" mnemonicParsing="false" onAction="#bookEvent" style="-fx-background-color: linear-gradient(to right,#ff512f, #dd2476);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Book Now" />
+        <Button layoutX="617.0" layoutY="16.0" mnemonicParsing="false" onAction="#backEvent" style="-fx-background-color: linear-gradient(to right,#43cea2, #185a9d);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Back" />
+      <Button layoutX="33.0" layoutY="422.0" mnemonicParsing="false" onAction="#reviewEvent" style="-fx-background-color: linear-gradient(to right,#36d1dc, #5b86e5);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="View Reviews" />
     </children>
 </AnchorPane>

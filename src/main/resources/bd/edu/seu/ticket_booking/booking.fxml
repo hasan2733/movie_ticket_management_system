@@ -6,8 +6,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="449.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd.edu.seu.ticket_booking.CustomerContoller.BookingController">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd.edu.seu.ticket_booking.CustomerContoller.BookingController">
    <children>
       <Label layoutX="20.0" layoutY="20.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Movie Booking" />
 
@@ -26,10 +27,22 @@
       <Label layoutX="300.0" layoutY="90.0" text="Seat Layout:" />
       <GridPane fx:id="seatGridPane" gridLinesVisible="true" layoutX="300.0" layoutY="116.0" prefHeight="150.0" prefWidth="280.0" />
 
-      <Label fx:id="selectedSeatsLabel" layoutX="20.0" layoutY="280.0" text="Selected Seats: None" />
-      <Label fx:id="totalPriceLabel" layoutX="20.0" layoutY="310.0" style="-fx-font-weight: bold;" text="Total Price: 0.00" />
+      <Label fx:id="selectedSeatsLabel" layoutX="16.0" layoutY="355.0" text="Selected Seats: None">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="totalPriceLabel" layoutX="16.0" layoutY="405.0" style="-fx-font-weight: bold;" text="Total Price: 0.00">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
 
-      <Button layoutX="450.0" layoutY="280.0" mnemonicParsing="false" onAction="#proceedToPayment" style="-fx-background-color: linear-gradient(to right,#43cea2, #185a9d); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10; -fx-cursor: hand; -fx-padding: 8 15;" text="Proceed to Payment" />
-      <Button layoutX="450.0" layoutY="320.0" mnemonicParsing="false" onAction="#backToMovies" style="-fx-background-color: linear-gradient(to right,#ff512f, #dd2476); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10; -fx-cursor: hand; -fx-padding: 8 15;" text="Back" />
+      <Button layoutX="449.0" layoutY="364.0" mnemonicParsing="false" onAction="#proceedToPayment" style="-fx-background-color: linear-gradient(to right,#43cea2, #185a9d); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10; -fx-cursor: hand; -fx-padding: 8 15;" text="Proceed to Payment">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button layoutX="449.0" layoutY="414.0" mnemonicParsing="false" onAction="#backToMovies" style="-fx-background-color: linear-gradient(to right,#ff512f, #dd2476); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10; -fx-cursor: hand; -fx-padding: 8 15;" text="Back">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
    </children>
 </AnchorPane>

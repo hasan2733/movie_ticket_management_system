@@ -10,30 +10,47 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd.edu.seu.ticket_booking.CustomerContoller.MovieReviewController">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd.edu.seu.ticket_booking.CustomerContoller.MovieReviewController">
    <children>
-      <Label layoutX="210.0" layoutY="14.0" text="Movie Reviews">
+      <Label layoutX="280.0" layoutY="13.0" text="Movie Reviews">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TableView fx:id="tableview" layoutX="13.0" layoutY="79.0" prefHeight="167.0" prefWidth="574.0">
+      <TableView fx:id="tableview" layoutX="13.0" layoutY="79.0" prefHeight="167.0" prefWidth="670.0">
         <columns>
-          <TableColumn fx:id="titleC" prefWidth="136.0" text="Movie Title" />
-          <TableColumn fx:id="ratingsC" prefWidth="131.20001220703125" text="Customer Ratings" />
-            <TableColumn fx:id="comentC" prefWidth="305.6000122070312" text="Comment" />
+          <TableColumn fx:id="titleC" prefWidth="154.39996910095215" text="Movie Title" />
+          <TableColumn fx:id="ratingsC" prefWidth="124.800048828125" text="Customer Ratings" />
+            <TableColumn fx:id="comentC" prefWidth="391.9999084472656" text="Comment" />
         </columns>
       </TableView>
-      <TextField fx:id="searchField" layoutX="14.0" layoutY="44.0" onKeyReleased="#searchEvent" prefHeight="26.0" prefWidth="574.0" promptText="Search" />
-      <Separator layoutX="277.0" layoutY="258.0" orientation="VERTICAL" prefHeight="149.0" prefWidth="0.0" />
-      <Label layoutX="39.0" layoutY="315.0" text="Customer Ratings" />
-      <Label fx:id="titleLabel" layoutX="108.0" layoutY="281.0" prefHeight="18.0" prefWidth="120.0" />
-      <Label layoutX="39.0" layoutY="282.0" text="Movie Title" />
-      <Label fx:id="ratingsLabel" layoutX="142.0" layoutY="314.0" prefHeight="18.0" prefWidth="120.0" />
+      <TextField fx:id="searchField" layoutX="14.0" layoutY="44.0" onKeyReleased="#searchEvent" prefHeight="26.0" prefWidth="670.0" promptText="Search" />
+      <Separator layoutX="277.0" layoutY="268.0" orientation="VERTICAL" prefHeight="149.0" prefWidth="0.0" />
+      <Label layoutX="39.0" layoutY="315.0" text="Customer Ratings">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="titleLabel" layoutX="108.0" layoutY="281.0" prefHeight="18.0" prefWidth="120.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label layoutX="39.0" layoutY="282.0" text="Movie Title">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="ratingsLabel" layoutX="142.0" layoutY="314.0" prefHeight="18.0" prefWidth="120.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
       <TextArea fx:id="commentField" layoutX="351.0" layoutY="294.0" prefHeight="98.0" prefWidth="198.0" />
-      <Label layoutX="351.0" layoutY="258.0" text="Comment" />
-      <Button layoutX="69.0" layoutY="360.0" mnemonicParsing="false" onAction="#reviewEvent" text="Add Review" style="-fx-background-color: linear-gradient(to right,#36d1dc, #5b86e5);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;"/>
-      <Button layoutX="517.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButton" text="Back" style="-fx-background-color: linear-gradient(to right,#ff512f, #dd2476); -fx-text-fill: white; -fx-font-weight: bold;"/>
+      <Label layoutX="351.0" layoutY="258.0" text="Comment">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Button layoutX="69.0" layoutY="360.0" mnemonicParsing="false" onAction="#reviewEvent" style="-fx-background-color: linear-gradient(to right,#36d1dc, #5b86e5);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Add Review">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button layoutX="629.0" layoutY="3.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: linear-gradient(to right,#ff512f, #dd2476); -fx-text-fill: white; -fx-font-weight: bold;" text="Back" />
    </children>
 </AnchorPane>
