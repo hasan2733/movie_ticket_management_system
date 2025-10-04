@@ -21,20 +21,33 @@ import java.util.ResourceBundle;
 
 public class BookingHistoryController implements Initializable {
 
-    @FXML private TableView<BookingRecord> bookingTable;
-    @FXML private TableColumn<BookingRecord, Number> idCol;
-    @FXML private TableColumn<BookingRecord, String> movieCol;
-    @FXML private TableColumn<BookingRecord, String> dateCol;
-    @FXML private TableColumn<BookingRecord, String> timeCol;
-    @FXML private TableColumn<BookingRecord, String> seatsCol;
-    @FXML private TableColumn<BookingRecord, Number> priceCol;
-    @FXML private TableColumn<BookingRecord, String> statusCol;
+    @FXML
+    private TableView<BookingRecord> bookingTable;
+    @FXML
+    private TableColumn<BookingRecord, Number> idCol;
+    @FXML
+    private TableColumn<BookingRecord, String> movieCol;
+    @FXML
+    private TableColumn<BookingRecord, String> dateCol;
+    @FXML
+    private TableColumn<BookingRecord, String> timeCol;
+    @FXML
+    private TableColumn<BookingRecord, String> seatsCol;
+    @FXML
+    private TableColumn<BookingRecord, Number> priceCol;
+    @FXML
+    private TableColumn<BookingRecord, String> statusCol;
 
-    @FXML private Label totalBookingsLabel;
-    @FXML private Label totalSpentLabel;
-    @FXML private TextField searchField;
-    @FXML private Button viewButton;
-    @FXML private Button cancelButton;
+    @FXML
+    private Label totalBookingsLabel;
+    @FXML
+    private Label totalSpentLabel;
+    @FXML
+    private TextField searchField;
+    @FXML
+    private Button viewButton;
+    @FXML
+    private Button cancelButton;
 
     private ObservableList<BookingRecord> bookingHistoryList = FXCollections.observableArrayList();
 
