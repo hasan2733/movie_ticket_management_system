@@ -40,5 +40,6 @@
         <Button layoutX="350.0" layoutY="361.0" mnemonicParsing="false" onAction="#trailerEvent" style="-fx-background-color: linear-gradient(to right,#36d1dc, #5b86e5);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Watch Trailers" />
         <Button layoutX="458.0" layoutY="360.0" mnemonicParsing="false" onAction="#bookEvent" style="-fx-background-color: linear-gradient(to right,#ff512f, #dd2476);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Book Now" />
         <Button layoutX="529.0" layoutY="16.0" mnemonicParsing="false" onAction="#backEvent" style="-fx-background-color: linear-gradient(to right,#43cea2, #185a9d);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Back" />
+      <Button layoutX="37.0" layoutY="361.0" mnemonicParsing="false" onAction="#reviewEvent" style="-fx-background-color: linear-gradient(to right,#36d1dc, #5b86e5);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="View Reviews" />
     </children>
 </AnchorPane>

@@ -59,6 +59,8 @@ public class ViewMoviesController implements Initializable {
 
     @FXML
     public TableColumn<Movie, String> titleC;
+    public static String myimagePath;
+    public static String myMovie;
 
     private ObservableList<Movie> movieList = FXCollections.observableArrayList();
     private Movie selectedMovie;
@@ -156,14 +158,28 @@ public class ViewMoviesController implements Initializable {
         movieTable.setItems(FXCollections.observableArrayList(filtered));
     }
 
+    @FXML
+    public void reviewEvent(ActionEvent event)
+    {
+        Movie selectedMovie = movieTable.getSelectionModel().getSelectedItem();
+
+        if (selectedMovie != null) {
+            CurrentMovie.setMovie(selectedMovie.getId(), selectedMovie.getTitle());
+            HelloApplication.changeScene("movieReview.fxml");
+        } else {
+            showAlert("Error", "Please select a movie first!");
+        }
+    }
+
     private void showMovieDetails(Movie movie) {
         movieTItleField.setText(movie.getTitle());
+        myMovie = movie.getTitle();
         genreField.setText(movie.getGenre());
         durationField.setText(movie.getDuration() + " minutes");
         ratingField.setText(String.valueOf(movie.getRatings()));
 
         String imagePath = movie.getImagePath();
-
+        myimagePath = imagePath;
         if (imagePath == null || imagePath.isEmpty()) {
             posterImage.setImage(null);
             return;
