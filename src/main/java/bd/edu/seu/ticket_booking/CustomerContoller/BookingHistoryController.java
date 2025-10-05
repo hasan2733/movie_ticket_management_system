@@ -204,7 +204,6 @@ public class BookingHistoryController implements Initializable {
         if (confirmation.showAndWait().orElse(ButtonType.NO) == ButtonType.YES) {
             try  {
                 Connection connection = DBConnection.getConnection();
-                connection.setAutoCommit(false);
                 String updateBookingSql = "update bookings set payment_status = 'CANCELLED' where id = ?";
                 PreparedStatement stmt = connection.prepareStatement(updateBookingSql);
                 stmt.setInt(1, booking.getBookingId());
@@ -213,7 +212,6 @@ public class BookingHistoryController implements Initializable {
                 stmt = connection.prepareStatement(updateHistorySql);
                 stmt.setInt(1, booking.getBookingId());
                 stmt.executeUpdate();
-                connection.commit();
                 loadBookingHistory();
                 showAlert("Success", "Booking cancelled successfully!\nRefund will be processed within 3-5 business days.");
 
@@ -240,7 +238,6 @@ public class BookingHistoryController implements Initializable {
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION, message, ButtonType.OK);
         alert.setTitle(title);
-        alert.setHeaderText(null);
         alert.showAndWait();
     }
 }
