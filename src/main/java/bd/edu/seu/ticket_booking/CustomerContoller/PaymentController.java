@@ -133,7 +133,7 @@ public class PaymentController implements Initializable {
                 PreparedStatement seatStmt = connection.prepareStatement(seatSql);
                 for (String seat : seats) {
                     seatStmt.setInt(1, bookingId);
-                    seatStmt.setString(2, seat != null && !seat.isEmpty() ? seat : "nehi he");
+                    seatStmt.setString(2, seat != null && !seat.isEmpty() ? seat : "nai");
                     seatStmt.addBatch();
                 }
                 seatStmt.executeBatch();
@@ -146,7 +146,7 @@ public class PaymentController implements Initializable {
             paymentStmt.setInt(1, bookingId);
             paymentStmt.setDouble(2, paidAmount > 0 ? paidAmount : 0.0);
             paymentStmt.setString(3, "Cash");
-            paymentStmt.setString(4, transactionId != null ? transactionId : "nehi he");
+            paymentStmt.setString(4, transactionId != null ? transactionId : "nai");
             paymentStmt.executeUpdate();
 
             connection.commit();

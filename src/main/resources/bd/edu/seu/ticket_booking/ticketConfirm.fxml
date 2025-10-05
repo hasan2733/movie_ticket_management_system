@@ -36,7 +36,7 @@
       <Label fx:id="paymentMethodLabel" layoutX="200.0" layoutY="260.0" />
 
 
-      <ImageView fx:id="qrCodeImageView" fitHeight="150.0" fitWidth="150.0" layoutX="400.0" layoutY="90.0" preserveRatio="true" />
+      <ImageView fx:id="qrCodeImageView" fitHeight="250.0" fitWidth="250.0" layoutX="400.0" layoutY="90.0" preserveRatio="true" />
 
       <Label layoutX="236.0" layoutY="379.0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #e74c3c;" text="Enjoy the Movie!" />
 
