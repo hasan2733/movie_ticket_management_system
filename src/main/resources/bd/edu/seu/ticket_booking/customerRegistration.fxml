@@ -13,7 +13,7 @@
       <TextField fx:id="nameField" layoutX="170.0" layoutY="101.0" prefHeight="35" prefWidth="430.0" promptText="Enter full name" style="-fx-background-radius: 8; -fx-background-color: #34495e; -fx-text-fill: white; -fx-prompt-text-fill: #95a5a6;" />
       <TextField fx:id="emailField" layoutX="170.0" layoutY="155.0" prefHeight="35" prefWidth="430.0" promptText="Enter email address" style="-fx-background-radius: 8; -fx-background-color: #34495e; -fx-text-fill: white; -fx-prompt-text-fill: #95a5a6;" />
 
-
+     
       <Label layoutX="206.0" layoutY="25.0" style="-fx-text-fill: white; -fx-font-size: 26px; -fx-font-weight: bold;" text=" Customer Registration " />
       <TextField fx:id="phoneField" layoutX="170.0" layoutY="214.0" prefHeight="35" prefWidth="430.0" promptText="Enter phone number" style="-fx-background-radius: 8; -fx-background-color: #34495e; -fx-text-fill: white; -fx-prompt-text-fill: #95a5a6;" />
       <Button layoutX="150.0" layoutY="424.0" onAction="#registerEvent" prefHeight="40" prefWidth="140" style="-fx-background-color: linear-gradient(to right, #ff512f, #dd2476);                                -fx-text-fill: white; -fx-font-weight: bold;                                -fx-background-radius: 10; -fx-cursor: hand;" text="Register" />
