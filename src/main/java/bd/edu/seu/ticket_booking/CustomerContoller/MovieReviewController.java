@@ -4,6 +4,7 @@ import bd.edu.seu.ticket_booking.DB.DBConnection;
 import bd.edu.seu.ticket_booking.HelloApplication;
 import bd.edu.seu.ticket_booking.Model.Review;
 import bd.edu.seu.ticket_booking.Utitlity.CurrentMovie;
+import bd.edu.seu.ticket_booking.Utitlity.CurrentUser;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -55,6 +56,25 @@ public class MovieReviewController implements Initializable {
     private ObservableList<Review> reviewList = FXCollections.observableArrayList();
     @FXML
     public void reviewEvent(ActionEvent event) {
+    int movieId = CurrentMovie.getId();
+    int userId = CurrentUser.getId();
+    try {
+        Connection connection = DBConnection.getConnection();
+        String sql = "select count(*) from movie_reviews where movie_id = ? and user_id = ? ";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1,movieId);
+        preparedStatement.setInt(2,userId);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if(resultSet.next() && resultSet.getInt(1)>0)
+        {
+            showAlert("Already reviewed", "You have already submitted a review for this movie");
+            return;
+        }
+    }
+    catch (SQLException e)
+    {
+        e.printStackTrace();
+    }
     HelloApplication.changeScene("addReview.fxml");
     }
 

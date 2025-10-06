@@ -41,10 +41,10 @@ public class BookingController implements Initializable {
     private int movieId;
     private double ticketPrice = 300.0;
 
-    private final Set<String> selectedSeats = new HashSet<>();
-    private final Set<String> bookedSeats = new HashSet<>();
+    private  Set<String> selectedSeats = new HashSet<>();
+    private  Set<String> bookedSeats = new HashSet<>();
 
-    private final Map<String, Integer> showTimeToIdMap = new HashMap<>();
+    private  Map<String, Integer> showTimeToIdMap = new HashMap<>();
     private int showtimeId = 0;
 
     @Override
@@ -62,7 +62,7 @@ public class BookingController implements Initializable {
         showDatePicker.setDayCellFactory(picker -> new DateCell() {
             @Override
             public void updateItem(LocalDate date, boolean empty) {
-                super.updateItem(date, empty);
+                super.updateItem(date, empty);   //for calling default behaviour of datecell
                 setDisable(empty || date.isBefore(LocalDate.now()));
             }
         });
