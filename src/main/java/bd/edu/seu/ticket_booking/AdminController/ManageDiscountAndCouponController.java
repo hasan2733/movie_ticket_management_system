@@ -36,7 +36,7 @@ public class ManageDiscountAndCouponController implements Initializable {
     @FXML public TableColumn<Discount, String> applicableC;
     @FXML public TableColumn<Discount, String> expiryDateC;
 
-    private final ObservableList<Discount> discountList = FXCollections.observableArrayList();
+    ObservableList<Discount> discountList = FXCollections.observableArrayList();
 
     @FXML
     public void addNewDiscountEvent(ActionEvent event) {
@@ -57,7 +57,7 @@ public class ManageDiscountAndCouponController implements Initializable {
         }
 
         try (Connection conn = DBConnection.getConnection()) {
-            String sql = "DELETE FROM discounts WHERE code = ?";
+            String sql = "delete from discounts where code = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, selected.getCode());
             int deleted = ps.executeUpdate();

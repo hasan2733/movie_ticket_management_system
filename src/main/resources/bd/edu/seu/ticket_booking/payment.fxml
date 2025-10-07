@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -27,7 +28,6 @@
 
 
       <Label layoutX="20.0" layoutY="180.0" style="-fx-font-weight: bold;" text="Coupon Code:" />
-      <TextField fx:id="couponField" layoutX="120.0" layoutY="175.0" prefWidth="150.0" promptText="Enter coupon" />
       <Button layoutX="280.0" layoutY="175.0" onAction="#applyCoupon" style="-fx-background-color:#27ae60; -fx-text-fill:white; -fx-background-radius:5;" text="Apply" />
 
       <Label fx:id="discountLabel" layoutX="120.0" layoutY="205.0" style="-fx-text-fill: #27ae60;" />
@@ -54,5 +54,7 @@
          <font>
             <Font size="14.0" />
          </font></Button>
+      <PasswordField fx:id="couponField" layoutX="120.0" layoutY="176.0" promptText="Enter coupon" />
+      <Button layoutX="337.0" layoutY="175.0" mnemonicParsing="false" onAction="#availableCoupon" style="-fx-background-color:#27ae60; -fx-text-fill:white; -fx-background-radius:5;" text="show available coupon" />
    </children>
 </AnchorPane>

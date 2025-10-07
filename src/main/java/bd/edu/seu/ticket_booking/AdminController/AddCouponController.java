@@ -94,6 +94,18 @@ public class AddCouponController implements Initializable {
         obs2.add("SPECIFIC_MOVIE");
         obs2.add("NEW_CUSTOMER");
         applicableField.setItems(obs2);
+        applicableField.setOnAction(Event->{
+            String selected = applicableField.getValue();
+            if (selected == null)
+            {
+                return;
+            }
+            if(selected.equals("SPECIFIC_MOVIE") || selected.equals("NEW_CUSTOMER"))
+            {
+                applicableField.getSelectionModel().clearSelection();
+                showAlert("Alert","This selection now off , please select 'ALL'");
+            }
+        });
         expirayField.setDayCellFactory(d-> new DateCell(){
             @Override
             public void updateItem(LocalDate date,boolean empty){

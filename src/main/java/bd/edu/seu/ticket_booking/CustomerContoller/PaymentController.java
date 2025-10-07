@@ -16,13 +16,20 @@ import java.util.UUID;
 
 public class PaymentController implements Initializable {
 
-    @FXML private Label movieLabel;
-    @FXML private Label showTimeLabel;
-    @FXML private Label seatsLabel;
-    @FXML private Label totalAmountLabel;
-    @FXML private Label paymentStatusLabel;
-    @FXML private TextField paymentAmountField;
-    @FXML private TextField couponField;
+    @FXML
+    private Label movieLabel;
+    @FXML
+    private Label showTimeLabel;
+    @FXML
+    private Label seatsLabel;
+    @FXML
+    private Label totalAmountLabel;
+    @FXML
+    private Label paymentStatusLabel;
+    @FXML
+    private TextField paymentAmountField;
+    @FXML
+    private TextField couponField;
 
     private double totalAmount;
     private boolean paymentProcessed = false;
@@ -44,7 +51,7 @@ public class PaymentController implements Initializable {
             showAlert("Error", "Please enter a coupon code.");
             return;
         }
-        try  {
+        try {
             Connection connection = DBConnection.getConnection();
             String sql = "select type, value from discounts where code = ? and expiry_date >= CURDATE()";
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -100,7 +107,7 @@ public class PaymentController implements Initializable {
     private void savePaymentToDatabase(double paidAmount) {
         String transactionId = UUID.randomUUID().toString();
 
-        try  {
+        try {
             Connection connection = DBConnection.getConnection();
             connection.setAutoCommit(false);
 
@@ -188,7 +195,7 @@ public class PaymentController implements Initializable {
                 "seat_numbers, total_price, payment_method, booking_date, payment_status) " +
                 "values (?, ?, ?, ?, ?, ?, ?, NOW(), 'PAID')";
 
-        try  {
+        try {
             Connection connection = DBConnection.getConnection();
             PreparedStatement stmt = connection.prepareStatement(sql);
 
@@ -205,6 +212,12 @@ public class PaymentController implements Initializable {
         } catch (SQLException e) {
             System.err.println(" Note: Failed to save booking history - " + e.getMessage());
         }
+    }
+
+    @FXML
+    public void availableCoupon()
+    {
+      HelloApplication.changeScene("showCoupon.fxml");
     }
 }
 
