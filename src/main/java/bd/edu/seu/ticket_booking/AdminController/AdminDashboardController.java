@@ -39,4 +39,10 @@ public class AdminDashboardController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         adminLabel.setText(CurrentUser.getName());
     }
+
+    @FXML
+    public void complainEvent()
+    {
+        HelloApplication.changeScene("viewComplain.fxml");
+    }
 }

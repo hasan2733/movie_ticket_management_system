@@ -59,7 +59,7 @@
          </children>
       </VBox>
 
-      <Button layoutX="44.0" layoutY="291.0" onAction="#logoutEvent" prefWidth="140" style="-fx-background-color: linear-gradient(to right,#56ab2f, #a8e063);                     -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 15; -fx-cursor: hand;" text=" Logout">
+      <Button layoutX="40.0" layoutY="348.0" onAction="#logoutEvent" prefWidth="140" style="-fx-background-color: linear-gradient(to right,#56ab2f, #a8e063);                     -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 15; -fx-cursor: hand;" text=" Logout">
          <font>
             <Font size="14.0" />
          </font>
@@ -77,6 +77,11 @@
          </font>
       </Button>
       <Button layoutX="44.0" layoutY="120.0" onAction="#manageMoviesEvent" prefWidth="140" style="-fx-background-color: linear-gradient(to right,#36d1dc, #5b86e5);                     -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 15; -fx-cursor: hand;" text=" Manage Movies">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="40.0" layoutY="294.0" onAction="#complainEvent" prefWidth="140" style="-fx-background-color: linear-gradient(to right,#ff512f, #dd2476);                     -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 15; -fx-cursor: hand;" text="Show Complaint">
          <font>
             <Font size="14.0" />
          </font>

@@ -5,6 +5,7 @@ module bd.edu.seu.ticket_booking {
     requires java.desktop;
     requires com.google.zxing;
     requires javafx.swing;
+    requires mysql.connector.j;
 
 
     opens bd.edu.seu.ticket_booking to javafx.fxml;

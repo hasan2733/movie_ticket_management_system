@@ -51,4 +51,9 @@ public class CustomerDashboardController implements Initializable {
             phoneLabel.setText(CurrentUser.getPhone() != null ? CurrentUser.getPhone() : "Not available");
         }
     }
+    @FXML
+    public void complainEvent()
+    {
+        HelloApplication.changeScene("addComplain.fxml");
+    }
 }
