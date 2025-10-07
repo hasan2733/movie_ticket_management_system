@@ -96,6 +96,8 @@ public class ViewComplainController implements Initializable {
                 ));
             }
             tableView.setItems(complaintsList);
+            tableView.setStyle("-fx-text-fill: white;");
+
 
             if (!complaintsList.isEmpty()) {
                 tableView.getSelectionModel().selectFirst();

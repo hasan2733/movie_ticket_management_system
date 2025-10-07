@@ -77,6 +77,8 @@ public class AddComplainController implements Initializable {
         obs.add("Others");
         complainComboBox.setItems(obs);
         userLabel.setText(CurrentUser.getName());
+        complainComboBox.getSelectionModel().selectFirst();
+        complainComboBox.setStyle("-fx-text-fill: white");
     }
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
