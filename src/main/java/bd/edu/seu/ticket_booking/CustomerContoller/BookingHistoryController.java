@@ -212,6 +212,10 @@ public class BookingHistoryController implements Initializable {
                 stmt = connection.prepareStatement(updateHistorySql);
                 stmt.setInt(1, booking.getBookingId());
                 stmt.executeUpdate();
+                String sql = "delete from payments where booking_id = ?";
+                PreparedStatement statement = connection.prepareStatement(sql);
+                statement.setInt(1,booking.getBookingId());
+                statement.executeUpdate();
                 loadBookingHistory();
                 showAlert("Success", "Booking cancelled successfully!\nRefund will be processed within 3-5 business days.");
 

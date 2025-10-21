@@ -25,16 +25,25 @@ import java.util.ResourceBundle;
 
 public class ManageDiscountAndCouponController implements Initializable {
 
-    @FXML public Button addNewDiscountEvent;
-    @FXML public Button backEvent;
-    @FXML public Button deleteDiscountButton;
+    @FXML
+    public Button addNewDiscountEvent;
+    @FXML
+    public Button backEvent;
+    @FXML
+    public Button deleteDiscountButton;
 
-    @FXML public TableView<Discount> discountTable;
-    @FXML public TableColumn<Discount, String> codeC;
-    @FXML public TableColumn<Discount, String> typeC;
-    @FXML public TableColumn<Discount, Number> valueC;
-    @FXML public TableColumn<Discount, String> applicableC;
-    @FXML public TableColumn<Discount, String> expiryDateC;
+    @FXML
+    public TableView<Discount> discountTable;
+    @FXML
+    public TableColumn<Discount, String> codeC;
+    @FXML
+    public TableColumn<Discount, String> typeC;
+    @FXML
+    public TableColumn<Discount, Number> valueC;
+    @FXML
+    public TableColumn<Discount, String> applicableC;
+    @FXML
+    public TableColumn<Discount, String> expiryDateC;
 
     ObservableList<Discount> discountList = FXCollections.observableArrayList();
 
@@ -56,7 +65,8 @@ public class ManageDiscountAndCouponController implements Initializable {
             return;
         }
 
-        try (Connection conn = DBConnection.getConnection()) {
+        try  {
+            Connection conn = DBConnection.getConnection();
             String sql = "delete from discounts where code = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, selected.getCode());
@@ -75,7 +85,8 @@ public class ManageDiscountAndCouponController implements Initializable {
     }
 
     private void loadDiscounts() {
-        try (Connection connection = DBConnection.getConnection()) {
+        try  {
+            Connection connection = DBConnection.getConnection();
             String sql = "select * from discounts";
             PreparedStatement ps = connection.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();

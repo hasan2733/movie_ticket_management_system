@@ -56,8 +56,9 @@ public class AdminLoginController {
     private boolean validateAdminCredentials(String username, String password) throws SQLException {
         String sql = "select * from admins where username = ? and password = ?";
 
-        try (Connection connection = DBConnection.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+        try{
+            Connection connection = DBConnection.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
@@ -65,13 +66,19 @@ public class AdminLoginController {
 
             return resultSet.next();
         }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     private void setCurrentAdmin(String username) throws SQLException {
         String sql = "select id, name, username, email from admins where username = ?";
 
-        try (Connection connection = DBConnection.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+        try {
+            Connection connection = DBConnection.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
             preparedStatement.setString(1, username);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -84,6 +91,10 @@ public class AdminLoginController {
                         "admin"
                 );
             }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
         }
     }
     private void showAlert(String title, String message) {

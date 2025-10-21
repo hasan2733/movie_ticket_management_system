@@ -2,6 +2,9 @@ package bd.edu.seu.ticket_booking.AdminController;
 
 import bd.edu.seu.ticket_booking.DB.DBConnection;
 import bd.edu.seu.ticket_booking.HelloApplication;
+import jakarta.mail.*;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeMessage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -11,7 +14,8 @@ import javafx.scene.control.TextField;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Types;
+import java.util.Properties;
+import java.util.Random;
 
 
 public class AdminRegistrationController {
@@ -30,6 +34,8 @@ public class AdminRegistrationController {
 
     @FXML
     public TextField usernameField;
+
+    private String generatedOtp;
 
     @FXML
     public void backTologinEvent(ActionEvent event) {
@@ -72,6 +78,18 @@ public class AdminRegistrationController {
         if (name.length()<3)
         {
             showAlert("Error","Invalid name");
+            return;
+        }
+
+        String enteredOpt = opt.getText().trim();
+        if(generatedOtp == null)
+        {
+            showAlert("Error", "Please send and verify your OTP first!");
+            return;
+        }
+        if(!enteredOpt.equals(generatedOtp))
+        {
+            showAlert("Error", "Invalid OTP! Please check your email again.");
             return;
         }
 
@@ -139,6 +157,69 @@ public class AdminRegistrationController {
             return false;
         }
         return true;
+    }
+
+    @FXML
+    public TextField opt;
+    @FXML
+    public void sendEmailEvent()
+    {
+        String email = emailField.getText().trim();
+
+        if (email.isEmpty()) {
+            showAlert("Error", "Please enter your email first!");
+            return;
+        }
+
+        if (!emailValidation(email)) {
+            showAlert("Error", "Invalid email address!");
+            return;
+        }
+
+        generatedOtp = String.valueOf(new Random().nextInt(900000) + 100000);
+
+
+        String subject = "Your OTP for Movie Ticket Management System Registration";
+        String body = "Dear Admin,\n\nYour OTP is: " + generatedOtp +
+                "\n\nPlease use this code to complete your registration.\n\nThank you,\nMovie Ticket Management System";
+
+        try {
+            sendEmail(email, subject, body);
+            showAlert("Success", "OTP sent successfully to " + email);
+        } catch (Exception e) {
+            showAlert("Error", "Failed to send OTP: " + e.getMessage());
+        }
+    }
+
+    public void sendEmail(String toMail,String subject,String message)
+    {
+        final String fromEmail = "musfiqr856@gmail.com";
+        final String fromPassword = "ifki wjyb twyu crzn";
+
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+
+        Session session = Session.getInstance(props, new Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(fromEmail, fromPassword);
+            }
+        });
+
+        try {
+            Message msg = new MimeMessage(session);
+            msg.setFrom(new InternetAddress(fromEmail));
+            msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toMail));
+            msg.setSubject(subject);
+            msg.setText(message);
+
+            Transport.send(msg);
+        } catch (MessagingException e) {
+            e.printStackTrace();
+            showAlert("Error", "Failed to send email: " + e.getMessage());
+        }
     }
 
 }

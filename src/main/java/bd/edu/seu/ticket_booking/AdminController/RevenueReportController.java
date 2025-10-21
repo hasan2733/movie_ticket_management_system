@@ -39,7 +39,6 @@ public class RevenueReportController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         revenueBarChart.setCategoryGap(40);
-        revenueBarChart.setBarGap(5);
         movieAxis.setTickLabelRotation(0);
         movieAxis.setTickLabelFont(Font.font(12));
         revenueAxis.setTickLabelFont(Font.font(12));
@@ -57,9 +56,10 @@ public class RevenueReportController implements Initializable {
                 "join payments p on b.id = p.booking_id " +
                 "group by m.title";
 
-        try (Connection conn = DBConnection.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql);
-             ResultSet rs = ps.executeQuery()) {
+        try  {
+            Connection conn = DBConnection.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
                 String title = rs.getString("title");

@@ -112,6 +112,27 @@ public class BookingController implements Initializable {
                 while (rs.next()) {
                     int id = rs.getInt("id");
                     String dbShowTime = rs.getString("show_time");
+
+                    LocalTime showTime = null;
+                    try {
+                        showTime = LocalTime.parse(dbShowTime.trim());
+                    }
+                    catch (DateTimeParseException e)
+                    {
+                       try {
+                           DateTimeFormatter in = DateTimeFormatter.ofPattern("h:mm a",Locale.ENGLISH);
+                           showTime = LocalTime.parse(dbShowTime.trim().toUpperCase(),in);
+                       }
+                       catch (DateTimeParseException e1)
+                       {
+                           e1.printStackTrace();
+                       }
+                    }
+                    if(showTime!=null && selectedDate.isEqual(LocalDate.now()) && showTime.isBefore(LocalTime.now()))
+                    {
+                        continue;
+                    }
+
                     String display = formatShowTime(dbShowTime);
                     if (!showTimeToIdMap.containsKey(display)) {
                         showTimeToIdMap.put(display, id);

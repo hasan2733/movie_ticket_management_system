@@ -49,7 +49,7 @@
                     </font>
                 </Label>
 
-                <Label style="-fx-text-fill: #bdc3c7; -fx-font-style: italic;" text="✨ Passionate about Coding and AI ✨">
+                <Label prefHeight="20.0" prefWidth="268.0" style="-fx-text-fill: #bdc3c7; -fx-font-style: italic;" text="✨ Passionate about Coding and Maths✨">
                <font>
                   <Font size="14.0" />
                </font></Label>

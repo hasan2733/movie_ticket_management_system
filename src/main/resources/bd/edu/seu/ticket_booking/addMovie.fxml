@@ -14,33 +14,33 @@
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="81.0" prefHeight="18.0" prefWidth="40.0" text="TItle:">
+      <Label layoutX="43.0" layoutY="107.0" prefHeight="19.0" prefWidth="30.0" text="Title:">
          <font>
             <Font size="13.0" />
          </font></Label>
-      <TextField fx:id="titleField" layoutX="91.0" layoutY="77.0" prefHeight="26.0" prefWidth="378.0" />
-      <Label layoutX="14.0" layoutY="117.0" text="Genre:">
+      <TextField fx:id="titleField" layoutX="111.0" layoutY="104.0" prefHeight="26.0" prefWidth="378.0" />
+      <Label layoutX="35.0" layoutY="157.0" text="Genre:">
          <font>
             <Font size="13.0" />
          </font></Label>
-      <TextField fx:id="genreField" layoutX="91.0" layoutY="113.0" prefHeight="26.0" prefWidth="378.0" />
-      <Label layoutY="158.0" text="Duration (min) :">
+      <TextField fx:id="genreField" layoutX="114.0" layoutY="154.0" prefHeight="26.0" prefWidth="378.0" />
+      <Label layoutX="9.0" layoutY="209.0" text="Duration (min) :">
          <font>
             <Font size="13.0" />
          </font></Label>
-      <TextField fx:id="durationField" layoutX="91.0" layoutY="153.0" prefHeight="26.0" prefWidth="378.0" />
-      <Label layoutX="4.0" layoutY="200.0" text="IMDB Ratings:">
+      <TextField fx:id="durationField" layoutX="114.0" layoutY="206.0" prefHeight="26.0" prefWidth="378.0" />
+      <Label layoutX="14.0" layoutY="261.0" text="IMDB Ratings:">
          <font>
             <Font size="13.0" />
          </font></Label>
-      <TextField fx:id="ratingsField" layoutX="91.0" layoutY="195.0" prefHeight="26.0" prefWidth="378.0" />
-      <Label layoutX="4.0" layoutY="239.0" text="Trailer Url:">
+      <TextField fx:id="ratingsField" layoutX="111.0" layoutY="258.0" prefHeight="26.0" prefWidth="378.0" />
+      <Label layoutX="24.0" layoutY="312.0" text="Trailer Url:">
          <font>
             <Font size="13.0" />
          </font></Label>
-      <TextField fx:id="urlField" layoutX="91.0" layoutY="234.0" prefHeight="26.0" prefWidth="378.0" />
-      <ImageView fx:id="posterImage" fitHeight="133.0" fitWidth="133.0" layoutX="463.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="476.0" layoutY="431.0" mnemonicParsing="false" onAction="#uploadEvent" style="-fx-background-color: linear-gradient(to right,#ff512f, #dd2476);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Upload Poster">
+      <TextField fx:id="urlField" layoutX="111.0" layoutY="309.0" prefHeight="26.0" prefWidth="378.0" />
+      <ImageView fx:id="posterImage" fitHeight="195.0" fitWidth="173.0" layoutX="493.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="523.0" layoutY="431.0" mnemonicParsing="false" onAction="#uploadEvent" style="-fx-background-color: linear-gradient(to right,#ff512f, #dd2476);        -fx-text-fill: white;        -fx-font-weight: bold;        -fx-background-radius: 10;        -fx-cursor: hand;" text="Upload Poster">
          <font>
             <Font size="14.0" />
          </font></Button>

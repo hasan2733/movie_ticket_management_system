@@ -45,4 +45,9 @@ public class AdminDashboardController implements Initializable {
     {
         HelloApplication.changeScene("viewComplain.fxml");
     }
+    @FXML
+    public void showBookings()
+    {
+        HelloApplication.changeScene("adminBookingView.fxml");
+    }
 }

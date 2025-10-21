@@ -156,7 +156,6 @@ public class PaymentController implements Initializable {
             paymentStmt.setString(4, transactionId != null ? transactionId : "nai");
             paymentStmt.executeUpdate();
 
-            connection.commit();
             CurrentBooking.setPaymentMethod("Cash");
             CurrentBooking.setTransactionId(transactionId);
             saveToBookingHistory(bookingId, paidAmount);

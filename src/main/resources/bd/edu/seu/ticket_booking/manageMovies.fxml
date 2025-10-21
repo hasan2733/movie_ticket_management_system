@@ -38,6 +38,6 @@
          </font></Button>
 
 
-        <TextField fx:id="searchField" layoutX="25.0" layoutY="96.0" prefHeight="26.0" prefWidth="667.0" promptText="search" />
+        <TextField fx:id="searchField" layoutX="25.0" layoutY="96.0" onKeyReleased="#searchEvent" prefHeight="26.0" prefWidth="667.0" promptText="search" />
     </children>
 </AnchorPane>

@@ -2,6 +2,7 @@ package bd.edu.seu.ticket_booking.AdminController;
 
 import bd.edu.seu.ticket_booking.DB.DBConnection;
 import bd.edu.seu.ticket_booking.HelloApplication;
+import bd.edu.seu.ticket_booking.Model.Discount;
 import bd.edu.seu.ticket_booking.Model.Movie;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -16,6 +17,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -75,23 +77,8 @@ public class ManageMoviesController implements Initializable {
         durationC.setCellValueFactory(c-> new SimpleDoubleProperty(c.getValue().getDuration()));
         ratingC.setCellValueFactory(c-> new SimpleDoubleProperty(c.getValue().getRatings()));
 
-
-        filteredMovies = new FilteredList<>(movies, p -> true);
-        movieTable.setItems(filteredMovies);
-
-        searchField.textProperty().addListener((observable, oldValue, newValue) -> {
-            String filter = newValue.toLowerCase().trim();
-            filteredMovies.setPredicate(movie -> {
-                if (filter.isEmpty()) {
-                    return true;
-                }
-                return movie.getTitle().toLowerCase().contains(filter) ||
-                        movie.getGenre().toLowerCase().contains(filter) ||
-                        String.valueOf(movie.getRatings()).contains(filter) ||
-                        String.valueOf(movie.getDuration()).contains(filter);
-            });
-        });
         loadMovies();
+        movieTable.setItems(movies);
     }
 
     private void loadMovies() {
@@ -118,6 +105,18 @@ public class ManageMoviesController implements Initializable {
         } catch (SQLException e) {
             showAlert("Error", "Failed to load movies: " + e.getMessage());
         }
+    }
+
+
+    @FXML
+    void searchEvent(KeyEvent event) {
+     String text = searchField.getText().toLowerCase();
+     List<Movie> filtered = movies.stream().filter(m->m.getTitle().toLowerCase().startsWith(text) ||
+             m.getGenre().toLowerCase().startsWith(text) || String.valueOf(m.getRatings()).startsWith(text)
+     || String.valueOf(m.getDuration()).startsWith(text)).toList();
+
+     movieTable.setItems(FXCollections.observableArrayList(filtered));
+
     }
 
     @FXML

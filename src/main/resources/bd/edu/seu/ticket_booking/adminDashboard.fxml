@@ -59,7 +59,7 @@
          </children>
       </VBox>
 
-      <Button layoutX="40.0" layoutY="348.0" onAction="#logoutEvent" prefWidth="140" style="-fx-background-color: linear-gradient(to right,#56ab2f, #a8e063);                     -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 15; -fx-cursor: hand;" text=" Logout">
+      <Button layoutX="40.0" layoutY="390.0" onAction="#logoutEvent" prefWidth="140" style="-fx-background-color: linear-gradient(to right,#56ab2f, #a8e063);                     -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 15; -fx-cursor: hand;" text=" Logout">
          <font>
             <Font size="14.0" />
          </font>
@@ -82,6 +82,11 @@
          </font>
       </Button>
       <Button layoutX="40.0" layoutY="294.0" onAction="#complainEvent" prefWidth="140" style="-fx-background-color: linear-gradient(to right,#ff512f, #dd2476);                     -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 15; -fx-cursor: hand;" text="Show Complaint">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="40.0" layoutY="341.0" onAction="#showBookings" prefWidth="140" style="-fx-background-color: linear-gradient(to right,#43cea2, #185a9d);                     -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 15; -fx-cursor: hand;" text="Show Bookings">
          <font>
             <Font size="14.0" />
          </font>
