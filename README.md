@@ -180,7 +180,7 @@ Implement user profile syste
 👨‍💻 Author
 
 Abid Hasan
-🎓 2nd Year CSE Student, Southeast University
+🎓 3rd Year CSE Student, Southeast University
 💡 Passionate about Java, DSA, and full-stack development
 🔗 LinkedIn
  | GitHub
