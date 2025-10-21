@@ -19,8 +19,6 @@ Installation
 
 Usage
 
-Screenshots
-
 Future Improvements
 
 Author
