@@ -10,3 +10,10 @@ public class AboutController {
         HelloApplication.changeScene("customerDashboard.fxml");
     }
 }
+
+/*
+This is a javafx project for the course Programming Language 2 (Java)
+Developed by Abid Hasan
+Course code : CSE 281 & 282
+Faculty : Assaduzzaman Noor
+ */
